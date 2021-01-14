@@ -58,7 +58,7 @@ def save_to_csv(output_dict, filename):
     output_df.to_csv(f'{filename}.csv')
 
 
-def comments_helper(video_ID, api_key, service, filename):
+def comments_helper(video_ID, api_key, service):
     '''
     To get the comments in the form of a dictionary containing: 
     1. Comment id
@@ -72,6 +72,16 @@ def comments_helper(video_ID, api_key, service, filename):
     # put comments extracted in specific lists for each column
     comments, commentsId, likesCount, authors = [], [], [], []
     
+    # response to get the title of the video
+    response_title = service.videos().list(
+        part = 'snippet',
+        id = video_ID
+    ).execute()
+
+    # get the video title
+    video_title = response_title['items'][0]['snippet']['title']
+    print(video_title)
+ 
 
     #get the first response from the YT service
     response = service.commentThreads().list(
@@ -133,11 +143,6 @@ def comments_helper(video_ID, api_key, service, filename):
         else:
             break
 
-    # return the whole thing as a dict
-    return {
-        'Comment': comments,
-        'Author' : authors,
-        'Comment ID' : commentsId,
-        'Like Count' : likesCount,
-    }
+    # return the whole thing as a dict and the video title to calling function in run.py
+    return dict({'Comment' : comments, 'Author' : authors, 'Comment ID' : commentsId, 'Like Count' : likesCount}), video_title
     
