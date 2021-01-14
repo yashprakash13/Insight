@@ -31,9 +31,13 @@ def main():
 
     api_key_path = constants.PATH_TO_API_KEY
 
-    print(sys.argv[1:])
+    #print(sys.argv[1:])
     
-    #get_comments('https://www.youtube.com/watch?v=Lm7fb4zrz54', api_key_path)
+    i = 1
+    for arg in sys.argv[1:]:
+        get_comments(arg, api_key_path)
+        print(f'Done for video: {i}')
+        i += 1
 
 
 if __name__ == '__main__':

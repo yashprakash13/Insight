@@ -55,7 +55,7 @@ def save_to_csv(output_dict, filename):
     To save the comments + other columns to the csv file specified with name
     '''
     output_df = pd.DataFrame(output_dict, columns = output_dict.keys())
-    output_df.to_csv(f'{filename}.csv')
+    output_df.to_csv(f'data/{filename}.csv')
 
 
 def comments_helper(video_ID, api_key, service):
@@ -96,13 +96,13 @@ def comments_helper(video_ID, api_key, service):
 
     #until we get response or until we break with condition that len(comments) > 1000
     while page < 2:
-        print(f'Page no: {page}')
+        #print(f'Page no: {page}')
         page += 1
         index = 0
         
         # for every comment in the response received
         for item in response['items']:
-            print(f"comment {index}")
+            #print(f"comment {index}")
             
             index += 1
 
