@@ -1,13 +1,14 @@
 '''
 The file tha will actually be called directly to collect data
 '''
-import argparse
+import sys
 import comments_collector as cc
+import constants
 
 def get_comments(video_url, api_key_file, order = 'time', 
                    part = 'snippet', maxResults = 100):
     '''
-    the function to fetch comments from the helper module
+    the function to fetch comments from the helper module for ONE video
     '''
     # build the service for YT API
     yt_service = cc.build_service(api_key_file)
@@ -19,7 +20,7 @@ def get_comments(video_url, api_key_file, order = 'time',
     comments_dict, title = cc.comments_helper(video_ID, api_key_file, yt_service)
     
     # save the output dict to storage as a csv file
-    cc.save_to_csv(comments_dict, title + '.csv')
+    cc.save_to_csv(comments_dict, title)
     
     print(f'Done for {video_url}.')
 
@@ -27,14 +28,12 @@ def get_comments(video_url, api_key_file, order = 'time',
 
 def main():
     ''' get the arguments '''
-    # parser = argparse.ArgumentParser()
 
-    # parser.add_argument('--video_url', required=True, help = 'Enter the video url')
-    # parser.add_argument('--api_key_file', required=True, help = 'Enter the api key json file path+name')
-    # parser.add_argument('--csv_filename', required=True, help = 'Enter the csv filename to save video to')
+    api_key_path = constants.PATH_TO_API_KEY
 
-    # args = parser.parse_args()
-    get_comments('https://www.youtube.com/watch?v=Lm7fb4zrz54', '../creds.json')
+    print(sys.argv[1:])
+    
+    #get_comments('https://www.youtube.com/watch?v=Lm7fb4zrz54', api_key_path)
 
 
 if __name__ == '__main__':

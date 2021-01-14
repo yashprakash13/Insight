@@ -95,7 +95,7 @@ def comments_helper(video_ID, api_key, service):
     
 
     #until we get response or until we break with condition that len(comments) > 1000
-    while response:
+    while page < 2:
         print(f'Page no: {page}')
         page += 1
         index = 0
