@@ -80,7 +80,7 @@ def comments_helper(video_ID, api_key, service):
 
     # get the video title
     video_title = response_title['items'][0]['snippet']['title']
-    print(video_title)
+    #print(video_title)
  
 
     #get the first response from the YT service
@@ -95,7 +95,7 @@ def comments_helper(video_ID, api_key, service):
     
 
     #until we get response or until we break with condition that len(comments) > 1000
-    while page < 2:
+    while response:
         #print(f'Page no: {page}')
         page += 1
         index = 0
@@ -126,18 +126,13 @@ def comments_helper(video_ID, api_key, service):
 
         
         # get next page of comments
-        if 'nextPageToken' in response:
+        if 'nextPageToken' in response: # can also specify if number of comments intended to collect reached like: len(comments) > 1001
             response = service.commentThreads().list(
                 part="snippet", 
                 videoId = video_ID, 
                 textFormat="plainText",
                 pageToken=response['nextPageToken']
             ).execute()
-
-        # break when the length exeeds 1000, 
-        # NOTE: PM videos typically receive around 3000 comments for best watched and around 1300 for least watched videos, so 1000 is a safe bet.
-        elif len(comments) > 1000:
-            break
 
         # if no response is received, break
         else:
