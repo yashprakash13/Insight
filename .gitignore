@@ -5,3 +5,4 @@ creds.json
 .vscode/
 PM_camera_transitions.csv
 .ipynb_checkpoints/
+data/
