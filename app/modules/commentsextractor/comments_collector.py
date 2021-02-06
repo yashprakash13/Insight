@@ -55,7 +55,7 @@ def save_to_csv(output_dict, filename):
     To save the comments + other columns to the csv file specified with name
     '''
     output_df = pd.DataFrame(output_dict, columns = output_dict.keys())
-    output_df.to_csv(f'data/{filename}.csv')
+    output_df.to_csv(f'./data/{filename}.csv')
 
 
 def comments_helper(video_ID, api_key, service):

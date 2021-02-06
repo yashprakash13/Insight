@@ -3,6 +3,6 @@ Pipfile.lock
 creds.json
 .DS_Store
 .vscode/
-PM_camera_transitions.csv
 .ipynb_checkpoints/
 data/
+*.csv
