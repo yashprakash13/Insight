@@ -7,9 +7,21 @@ import pickle
 
 from constants import *
 
+df = None
+comments_list = None
+
+def load_data(filename):
+    df = pd.read_csv(os.path.join(PATH_TO_DATA, filename), \
+                                    usecols = [1, 4]).sort_values(by = [COLUMN_LIKE_COUNT], \
+                                    ascending = False).reset_index(drop = True)
+
+    comments_list = df[COLUMN_COMMENT].tolist()
+
+    return comments_list, df
 
 
-def detect_clusters(embeddings, threshold=0.85, min_community_size=15, init_max_size=1000):
+
+def _detect_clusters(embeddings, threshold=0.85, min_community_size=15, init_max_size=1000):
     # Compute cosine similarity scores
     cos_scores = util.pytorch_cos_sim(embeddings, embeddings)
 
@@ -63,42 +75,34 @@ def detect_clusters(embeddings, threshold=0.85, min_community_size=15, init_max_
     return unique_communities
 
 
-def get_clusters_from_file(filename):
-    df = pd.read_csv(os.path.join(PATH_TO_DATA, filename), \
-                                    usecols = [1, 4]).sort_values(by = [COLUMN_LIKE_COUNT], \
-                                    ascending = False).reset_index(drop = True)
 
-    comments_list = df[COLUMN_COMMENT].tolist()
-
-    if not os.path.isfile(os.path.join(PATH_TO_DATA_CACHE, 'embedding_cache.pkl')):
+def get_clusters_from_file(filename, comments_list = None):
+    if not os.path.isfile(os.path.join(PATH_TO_DATA_CACHE, f'{filename}_embedding_cache.pkl')):
         model = SentenceTransformer('distilbert-base-nli-stsb-quora-ranking')
         corpus_embeddings = model.encode(comments_list, show_progress_bar=True, convert_to_numpy=True)
 
-        with open(os.path.join(PATH_TO_DATA_CACHE, 'embedding_cache.pkl'), 'wb') as f:
+        with open(os.path.join(PATH_TO_DATA_CACHE, f'{filename}_embedding_cache.pkl'), 'wb') as f:
             pickle.dump(corpus_embeddings, f)
-
     else:
         # load embeddings from cache
-        with open(os.path.join(PATH_TO_DATA_CACHE, 'embedding_cache.pkl'), 'rb') as f:
+        with open(os.path.join(PATH_TO_DATA_CACHE, f'{filename}_embedding_cache.pkl'), 'rb') as f:
             corpus_embeddings = pickle.load(f)
 
-    if not os.path.isfile(os.path.join(PATH_TO_DATA_CACHE, 'all_clusters.pkl')):
-        all_clusters = detect_clusters(corpus_embeddings)
-    else:
-        with open(os.path.join(PATH_TO_DATA_CACHE, 'all_clusters.pkl'), 'rb') as f:
-            all_clusters = pickle.load(f)
-
-
-
-    all_clusters.sort()
-    clusters_to_print = all_clusters[:5]
-
-    for i, cluster in enumerate(clusters_to_print):
-        print(f'Topic {i}: ')
-        for sentence_id in cluster[:5]:
-            print("\t", comments_list[sentence_id])
+    all_clusters = _detect_clusters(corpus_embeddings)
         
-        print('-------------')
+        
+    all_clusters.sort()
+    clusters_to_show = all_clusters[:5]
+
+    # for i, cluster in enumerate(clusters_to_show):
+    #     print(f'Topic {i}: ')
+    #     for sentence_id in cluster[:5]:
+    #         print("\t", comments_list[sentence_id])
+        
+    #     print('-------------')
+
+    return clusters_to_show
+
 
 
 
