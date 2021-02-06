@@ -14,7 +14,7 @@ import streamlit as st
 
 
 
-st.title('Insight Explorer')
+st.sidebar.title('Insight Explorer')
 
 class Starter:
     def __init__(self):
@@ -30,20 +30,26 @@ class Starter:
 
     def run_clustering(self):
         self.list_of_files = self.get_list_of_data_files()
-        self.data_file_selected = st.selectbox(label = 'Select the data to load.', options = self.list_of_files)
-        st.write(f'Selected: {self.data_file_selected}')
+        self.data_file_selected = st.sidebar.selectbox(label = 'Select the data to load.', \
+                                                        options = self.list_of_files)
+        st.sidebar.write(f'Selected: {self.data_file_selected}')
         
         self.comments_list, self.df = cluster_maker.load_data(self.data_file_selected)
 
-        if st.button('Load Data'):
+        if st.sidebar.button('Load Data'):
             st.spinner('Loading data...')
             time.sleep(1.5)
             st.success('Data loaded!')
+
+        if st.sidebar.checkbox('Show dataframe'):
+            st.subheader('Dataframe:')
             st.write(self.df)
+        if st.sidebar.checkbox('Show list of comments'):
+            st.subheader('List of comments:')
             st.write(self.comments_list[:10])
         
 
-        start_clustering_btn = st.button('Start Clustering Process')
+        start_clustering_btn = st.sidebar.button('Start Clustering Process')
 
         if start_clustering_btn:
             self.clusters_to_show = cluster_maker.get_clusters_from_file(self.data_file_selected, \
