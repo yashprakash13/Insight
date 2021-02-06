@@ -46,7 +46,8 @@ class Starter:
         start_clustering_btn = st.button('Start Clustering Process')
 
         if start_clustering_btn:
-            self.clusters_to_show = cluster_maker.get_clusters_from_file(self.data_file_selected)
+            self.clusters_to_show = cluster_maker.get_clusters_from_file(self.data_file_selected, \
+                                                                        self.comments_list)
             # st.write(self.clusters_to_show)
             for i, cluster in enumerate(self.clusters_to_show):
                 st.write(f'Topic {i}:')
