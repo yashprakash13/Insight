@@ -74,6 +74,7 @@ class Starter:
         with st.spinner('Getting top emojis...'):
             time.sleep(1)
         
+        st.write(f'Top {count_of_emojis} emojis used in the comments are:')
         st.write(self.top_emojis[:count_of_emojis])
 
 
