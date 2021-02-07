@@ -1,6 +1,8 @@
 import os
 import sys
 import time
+import base64
+from PIL import Image
 
 sys.path.append('data')
 sys.path.append('modules')
@@ -9,6 +11,7 @@ from commentsextractor import run_comments_collector
 from clustering import cluster_maker
 from emojitask import emoji_extractor
 from retrieval import relevant_comments
+from prettylittlewordclouds import cloudmaker
 from constants import *
 
 
@@ -31,6 +34,16 @@ class Starter:
     def get_list_of_data_files(self):
         file_list = os.listdir('data/')
         return [str(filename) for filename in file_list if str(filename).endswith('.csv')]
+
+    def get_icon_code_from_selected_cloud_image(self, selected = 'Simple Cloud'):
+        return DICT_OF_CLOUDS[selected]
+    
+    def get_binary_file_downloader_html(self, bin_file, file_label='File'):
+        with open(bin_file, 'rb') as f:
+            data = f.read()
+        bin_str = base64.b64encode(data).decode()
+        href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Download {file_label}</a>'
+        return href
 
 
     def run_all(self):
@@ -70,15 +83,14 @@ class Starter:
         
         st.sidebar.write('Find top emojis from the comments!')
         count_of_emojis = st.sidebar.slider('Top:', min_value = 3, max_value = 10)
+        if st.sidebar.button('Get'):
+            self.top_emojis = emoji_extractor.get_most_freq_emojis(self.short_comments_list, 10)
+            with st.spinner('Getting top emojis...'):
+                time.sleep(1)
+            st.write(f'Top {count_of_emojis} emojis used in the comments are:')
+            st.write(self.top_emojis[:count_of_emojis])
 
-        self.top_emojis = emoji_extractor.get_most_freq_emojis(self.short_comments_list, 10)
-
-        with st.spinner('Getting top emojis...'):
-            time.sleep(1)
         
-        st.write(f'Top {count_of_emojis} emojis used in the comments are:')
-        st.write(self.top_emojis[:count_of_emojis])
-
         st.sidebar.write('Enter a query here to fetch related comments.')
         query = st.sidebar.text_input('Type here.')
         if st.sidebar.button('Get comments'):
@@ -88,6 +100,26 @@ class Starter:
             for hit in hits:
                 top_comments_retreived.append(self.long_comments_list[hit['corpus_id']])
             st.write(top_comments_retreived)
+
+        
+        st.sidebar.write('Make a pretty little cloud of words from the comments')
+        selected_cloud_image = st.sidebar.selectbox(label = 'Select a mask image:', \
+                                                    options = OPTION_OF_CLOUDS)
+        
+        icon_selected = self.get_icon_code_from_selected_cloud_image(selected_cloud_image)
+
+        if st.sidebar.button('Generate'):
+            generated_cloud_name = cloudmaker.get_styled_cloud(self.long_comments_list, \
+                                                                icon_selected = icon_selected)
+            st.image(os.path.join(PRETTY_LITTLE_WORD_CLOUD_PATH, generated_cloud_name))
+
+            cloud_image_file_path = os.path.join(PRETTY_LITTLE_WORD_CLOUD_PATH, generated_cloud_name)
+
+            st.markdown(self.get_binary_file_downloader_html(cloud_image_file_path, 'this image'), unsafe_allow_html=True)
+
+            
+
+
 
 
 

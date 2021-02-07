@@ -11,6 +11,7 @@ sys.path.append('modules')
 from commentsextractor import run_comments_collector
 from clustering import cluster_maker
 from retrieval import relevant_comments
+from prettylittlewordclouds import cloudmaker
 
 from constants import *
 
@@ -43,5 +44,13 @@ short_comments_list, long_comments_list, df = cluster_maker.load_data(filename)
 
 # print(cluster_maker.get_clusters_from_file("'Just a YouTuber'.csv"))
 
-relevant_comments.get_relevant_comments('What an inspiration!', "How to Vlog.csv", long_comments_list)
+# relevant_comments.get_relevant_comments('What an inspiration!', "How to Vlog.csv", long_comments_list)
 
+
+extra_stop_words = ['Peter', 'McKinnon', 'Thank', 'Youtube', 'Youtuber', 'Video', 'film', 'filmmaker']
+
+filepath_of_saved_image = cloudmaker.get_styled_cloud(long_comments_list, \
+                                                        extra_stop_words = extra_stop_words,\
+                                                        icon_selected = 'fas fa-film')
+
+print(filepath_of_saved_image)
