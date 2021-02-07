@@ -8,6 +8,7 @@ sys.path.append('modules')
 from commentsextractor import run_comments_collector
 from clustering import cluster_maker
 from emojitask import emoji_extractor
+from retrieval import relevant_comments
 from constants import *
 
 
@@ -31,7 +32,8 @@ class Starter:
         file_list = os.listdir('data/')
         return [str(filename) for filename in file_list if str(filename).endswith('.csv')]
 
-    def run_clustering(self):
+
+    def run_all(self):
         self.list_of_files = self.get_list_of_data_files()
         self.data_file_selected = st.sidebar.selectbox(label = 'Select the data to load.', \
                                                         options = self.list_of_files)
@@ -77,10 +79,20 @@ class Starter:
         st.write(f'Top {count_of_emojis} emojis used in the comments are:')
         st.write(self.top_emojis[:count_of_emojis])
 
+        st.sidebar.write('Enter a query here to fetch related comments.')
+        query = st.sidebar.text_input('Type here.')
+        if st.sidebar.button('Get comments'):
+            hits = relevant_comments.get_relevant_comments(query, self.data_file_selected, \
+                                                    self.long_comments_list)
+            top_comments_retreived = []
+            for hit in hits:
+                top_comments_retreived.append(self.long_comments_list[hit['corpus_id']])
+            st.write(top_comments_retreived)
+
 
 
 starter = Starter()
-starter.run_clustering()
+starter.run_all()
 
 
 
