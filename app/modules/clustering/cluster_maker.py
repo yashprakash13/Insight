@@ -4,7 +4,6 @@ from sentence_transformers import SentenceTransformer, util
 import numpy as np
 import pickle
 
-
 from constants import *
 
 df = None
@@ -15,9 +14,19 @@ def load_data(filename):
                                     usecols = [1, 4]).sort_values(by = [COLUMN_LIKE_COUNT], \
                                     ascending = False).reset_index(drop = True)
 
-    comments_list = df[COLUMN_COMMENT].tolist()
+    full_comments_list = df[COLUMN_COMMENT].tolist()
 
-    return comments_list, df
+    short_comments_list = []
+    long_comments_list = []
+
+    for comment in full_comments_list:
+        if len(comment) >= 23:
+            long_comments_list.append(comment)
+        else:
+            short_comments_list.append(comment)
+
+
+    return short_comments_list, long_comments_list, df
 
 
 
@@ -90,7 +99,7 @@ def get_clusters_from_file(filename, comments_list = None):
 
     all_clusters = _detect_clusters(corpus_embeddings)
         
-        
+
     all_clusters.sort()
     clusters_to_show = all_clusters[:5]
 
