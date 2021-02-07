@@ -6,3 +6,4 @@ creds.json
 .ipynb_checkpoints/
 data/
 *.csv
+images/
