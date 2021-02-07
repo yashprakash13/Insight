@@ -14,7 +14,7 @@ from constants import *
 import streamlit as st
 
 
-
+st.sidebar.image(os.path.join(IMAGES_PATH, 'logo.png'), width=250)
 st.sidebar.title('Insight Explorer')
 
 class Starter:

@@ -9,3 +9,5 @@ PATH_TO_DATA_CACHE = './data/cache'
 COLUMN_LIKE_COUNT = 'Like Count'
 
 COLUMN_COMMENT = 'Comment'
+
+IMAGES_PATH = './images'
