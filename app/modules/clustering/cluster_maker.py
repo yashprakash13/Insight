@@ -10,10 +10,11 @@ df = None
 comments_list = None
 
 def load_data(filename):
-    df = pd.read_csv(os.path.join(PATH_TO_DATA, filename), \
-                                    usecols = [1, 4]).sort_values(by = [COLUMN_LIKE_COUNT], \
-                                    ascending = False).reset_index(drop = True)
+    df_full = pd.read_csv(os.path.join(PATH_TO_DATA, filename)) \
+        .sort_values(by = [COLUMN_LIKE_COUNT], ascending = False) \
+        .reset_index(drop = True)
 
+    df = df_full[[COLUMN_COMMENT, COLUMN_LIKE_COUNT]]
     full_comments_list = df[COLUMN_COMMENT].tolist()
 
     short_comments_list = []
@@ -26,7 +27,7 @@ def load_data(filename):
             short_comments_list.append(comment)
 
 
-    return short_comments_list, long_comments_list, df
+    return short_comments_list, long_comments_list, df_full
 
 
 
@@ -101,7 +102,6 @@ def get_clusters_from_file(filename, comments_list = None):
         
 
     all_clusters.sort()
-    clusters_to_show = all_clusters[:5]
 
     # for i, cluster in enumerate(clusters_to_show):
     #     print(f'Topic {i}: ')
@@ -110,7 +110,7 @@ def get_clusters_from_file(filename, comments_list = None):
         
     #     print('-------------')
 
-    return clusters_to_show
+    return all_clusters
 
 
 

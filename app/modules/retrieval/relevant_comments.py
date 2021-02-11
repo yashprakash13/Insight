@@ -20,7 +20,7 @@ def _get_relevant_comments_helper(comments, query, query_embedding, corpus_embed
     
     #print top 10 hits
     for hit in hits[:10]:
-        print(hit['score'], comments[hit['corpus_id']])
+        #print(hit['score'], comments[hit['corpus_id']])
     
     return hits[:10]
 
