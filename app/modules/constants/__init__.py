@@ -17,6 +17,7 @@ PRETTY_LITTLE_WORD_CLOUD_PATH = './images/prettylittlecloud'
 DICT_OF_CLOUDS = {'Simple Cloud' : 'fas fa-cloud',\
                     'Retro Camera' : 'fas fa-camera-retro', \
                     'Bitten Cookie' : 'fas fa-cookie-bite', \
-                    'Cute Dog': 'fas fa-dog'}
+                    'Cute Dog': 'fas fa-dog', \
+                    'Coffee Mug': 'fas fa-mug-hot'}
 
-OPTION_OF_CLOUDS = ['Simple Cloud', 'Retro Camera', 'Bitten Cookie', 'Cute Dog']
+OPTION_OF_CLOUDS = ['Simple Cloud', 'Retro Camera', 'Bitten Cookie', 'Cute Dog', 'Coffee Mug']

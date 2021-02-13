@@ -114,24 +114,3 @@ def get_clusters_from_file(filename, comments_list = None):
 
 
 
-
-def get_clusters_from_url(url):
-    pass
-
-
-def get_clusters():
-    if os.path.isfile(os.path.join(PATH_TO_DATA_CACHE, filename)):
-        pass
-    else:
-        pass
-
-
-
-def print_all_clusters(clusters):
-    '''
-    To print all clusters
-    '''
-    for i, cluster in enumerate(clusters):
-        print("\Topic {}, #{} Elements ".format(i+1, len(cluster)))
-        for sentence_id in cluster:
-            print("\t", comments_list[sentence_id])
