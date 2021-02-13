@@ -8,7 +8,7 @@ from collections import defaultdict
 sys.path.append('data')
 sys.path.append('modules')
 
-from commentsextractor import run_comments_collector
+from commentsextractor import run_comments_collector, comments_collector
 from clustering import cluster_maker
 from retrieval import relevant_comments
 from prettylittlewordclouds import cloudmaker
@@ -17,26 +17,26 @@ from constants import *
 
 filename = "'Just a YouTuber'.csv"
 
-short_comments_list, long_comments_list, df = cluster_maker.load_data(filename)
-# print(short_comments_list[:5])
-clusters_to_show = cluster_maker.get_clusters_from_file(filename, long_comments_list)
+# short_comments_list, long_comments_list, df = cluster_maker.load_data(filename)
+# # print(short_comments_list[:5])
+# clusters_to_show = cluster_maker.get_clusters_from_file(filename, long_comments_list)
 
-sum = 0
-NUM_CLUSTERS_TO_USE = len(clusters_to_show)
-if NUM_CLUSTERS_TO_USE > 20:
-    NUM_CLUSTERS_TO_USE = 20
+# sum = 0
+# NUM_CLUSTERS_TO_USE = len(clusters_to_show)
+# if NUM_CLUSTERS_TO_USE > 20:
+#     NUM_CLUSTERS_TO_USE = 20
 
-for cluster in clusters_to_show[:NUM_CLUSTERS_TO_USE]:
-    sum += len(cluster)
+# for cluster in clusters_to_show[:NUM_CLUSTERS_TO_USE]:
+#     sum += len(cluster)
 
-for cluster in clusters_to_show:
-    percentages.append((len(cluster)/sum)*100.0)
+# for cluster in clusters_to_show:
+#     percentages.append((len(cluster)/sum)*100.0)
 
-import plotly.graph_objects as go
-labels = [f"Topic{i}" for i in range(1, NUM_CLUSTERS_TO_USE)]
-values = percentages
+# import plotly.graph_objects as go
+# labels = [f"Topic{i}" for i in range(1, NUM_CLUSTERS_TO_USE)]
+# values = percentages
 
-fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
+# fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
 
 
 
@@ -74,3 +74,5 @@ fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
 
 # print(filepath_of_saved_image)
 
+
+print(comments_collector.get_id('https://youtu.be/AWSd83aBhhI'))

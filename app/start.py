@@ -32,8 +32,12 @@ class Starter:
         self.df = None
         self.all_clusters = None
         self.top_emojis = None
-
     
+
+    def get_data_from_url(self, url):
+        video_titles = run_comments_collector.get_comments_from_urls([url])
+        return video_titles[0]
+
     def get_list_of_data_files(self):
         '''to load a csv file from data folder'''
         file_list = os.listdir('data/')
@@ -68,8 +72,22 @@ class Starter:
         '''
         main function to display all widgets and functionalities
         '''
+
+        st.sidebar.subheader('Fetch comments from URL')
+        url_input = st.sidebar.text_input(label = 'Enter a Youtube Video URL')
+        
+        if st.sidebar.button('Get and Load'):
+            if not url_input:
+                st.sidebar.error('URL cannot be empty!')
+            else:
+                with st.spinner('Fetching comments...'):
+                    video_title = self.get_data_from_url(url_input)
+                    st.sidebar.success(f'Comments fetched from "{video_title}"! Now select it from the below list.')
+
+        st.sidebar.write('OR')
+
         self.list_of_files = self.get_list_of_data_files()
-        st.sidebar.subheader('Load data')
+        st.sidebar.subheader('Load data from an existing file')
         self.data_file_selected = st.sidebar.selectbox(label = 'Select the data to load:', \
                                                         options = self.list_of_files)
         st.sidebar.write(f'Selected: {self.data_file_selected}')
@@ -100,6 +118,7 @@ class Starter:
                 with st.spinner('Getting topics...'):  
                     time.sleep(1)
                     # get all clusters from comments
+                    # st.write(self.data_file_selected)
                     self.all_clusters = cluster_maker.get_clusters_from_file(self.data_file_selected, \
                                                                                 self.long_comments_list)
                     with st.beta_expander('Topics talked about from the comments:', expanded = True):

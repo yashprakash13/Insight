@@ -4,7 +4,7 @@ The file that will actually be called directly to collect data
 from .comments_collector import *
 import constants
 
-def get_comments(video_url, api_key_file, order = 'time', 
+def _get_comments(video_url, api_key_file, order = 'time', 
                    part = 'snippet', maxResults = 100):
     '''
     the function to fetch comments from the helper module for ONE video
@@ -26,7 +26,7 @@ def get_comments(video_url, api_key_file, order = 'time',
 
 
 
-def run(urls):
+def get_comments_from_urls(urls):
     ''' get the arguments '''
 
     api_key_path = constants.PATH_TO_API_KEY
@@ -34,7 +34,7 @@ def run(urls):
     i = 1
     video_titles = []
     for url in urls:
-        title = get_comments(url, api_key_path)
+        title = _get_comments(url, api_key_path)
         # print(f'Done for video: {i}')
         i += 1
         video_titles.append(title)
