@@ -84,6 +84,7 @@ docker run --publish 8501:8501 -it insight:1.0
 
 **If you want to build your own comments dataset with this app**, feel free to follow the entire process [I described in this blog post](https://medium.com/this-code/how-to-make-a-youtube-video-comments-dataset-with-the-googles-python-api-34cf32a14d16?source=your_stories_page-------------------------------------). This will help you make your own ```creds.json``` file that you can keep in the root project directory when you run the app.
 
+**I'm also making an online course-ebook with the WHOLE guide to building this project.** [You can book your copy here.](https://tremendous-founder-3862.ck.page/69e31e7b71) It's free too. :)
 
 ## How I built this app
 Insight was built with these major components. A huge thank you to their creators for making these amazing tools available for free.
