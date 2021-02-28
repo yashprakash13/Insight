@@ -95,7 +95,7 @@ Insight was built with these major components. A huge thank you to their creator
 You might have a good idea by now that I absolutely LOVE to write. 😁
 
 ## Support me
-Did you like this project and the features that it enables or are you psyched by the awesome use of NLP demonstrated in here? Please consider supporting me! :)
+Did you like this project and the features that it enables or are you hyped by the awesome use of NLP demonstrated in here? Please consider supporting me! :)
 
 **Buy me a :coffee: or a :beer:**
 
