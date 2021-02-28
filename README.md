@@ -72,6 +72,7 @@ docker run --publish 8501:8501 -it insight:1.0
 ```
 8. Navigate to https://localhost:8501 to explore the app! Don't forget to see the [demo video](#see-the-app-in-action) first to make sure you have a good grasp of the app's workings!
 
+**If you want to build your own comments dataset with this app**, feel free to follow the entire process [I described in this blog post](https://medium.com/this-code/how-to-make-a-youtube-video-comments-dataset-with-the-googles-python-api-34cf32a14d16?source=your_stories_page-------------------------------------). This will help you make your own ```creds.json``` file that you can keep in the root project directory when you run the app.
 
 ## Support me
 Did you like this project and the features that it enables or are you psyched by the awesome use of NLP demonstrated in here? Please consider supporting me! :)
