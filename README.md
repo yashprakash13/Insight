@@ -93,7 +93,7 @@ Insight was built with these major components. A huge thank you to their creator
 * [Streamlit](https://www.streamlit.io/) -> the easy frontend development library for backend people like me :P I wrote a detailed blog post around it too [here](https://towardsdatascience.com/a-guide-to-streamlit-frontend-for-data-science-made-simpler-c6dda54e3183?source=your_stories_page-------------------------------------).
 * [Docker](https://www.docker.com/) -> to easy deploy the app as a stand-alone container, like I've written [here](https://pub.towardsai.net/how-to-dockerize-your-data-science-project-a-quick-guide-b6fa2d6a8ba1?source=your_stories_page-------------------------------------).
 
-You might have a good idea by now that I LOVE to write. 😁
+You might have a good idea by now that I absolutely LOVE to write. 😁
 
 ## Support me
 Did you like this project and the features that it enables or are you psyched by the awesome use of NLP demonstrated in here? Please consider supporting me! :)
