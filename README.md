@@ -36,7 +36,11 @@ Insight currently offers these features:
 
 
 ## See the app in action
-Watch the demo video I made about the project (It's 3:16 long. I worked very hard on this to **make it fun** rather than just a boring demo):
+This is what the app looks like:
+![Demo GIF](https://github.com/yashprakash13/Insight/blob/main/app/images/Screen%20Recording%202021-02-28%20at%2011.10.26%20PM.gif)
+
+
+You can also watch the demo video I made about the project (It's 3:16 long. I worked very hard on this to **make it fun** rather than just a boring demo):
 
 <a href="http://www.youtube.com/watch?v=3zhDx04Nxd8"> <img src="https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7zHKjfxq6y9ShogWtMBMPyB3jiNps91LoNH8A=s500" width="148"> </a>
 
