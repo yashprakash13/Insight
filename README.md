@@ -74,6 +74,16 @@ docker run --publish 8501:8501 -it insight:1.0
 
 **If you want to build your own comments dataset with this app**, feel free to follow the entire process [I described in this blog post](https://medium.com/this-code/how-to-make-a-youtube-video-comments-dataset-with-the-googles-python-api-34cf32a14d16?source=your_stories_page-------------------------------------). This will help you make your own ```creds.json``` file that you can keep in the root project directory when you run the app.
 
+
+## How I built this app
+Insight was built with these major components. A huge thank you to their creators for making these amazing tools available for free.
+* [Google YouTube API](http://cloud.google.com) -> to download comments from videos, as I've described here.
+* [Sentence Transformers](https://sbert.net) -> to enable semantic similarity search and information retrieval with by computing sentence embeddings, as described here.
+* [Streamlit](https://www.streamlit.io/) -> the easy frontend development library for backend people like me :P I wrote a detailed blog post around it too here.
+* [Docker](https://www.docker.com/) -> to easy deploy the app as a stand-alone container, like I've written here.
+
+
+
 ## Support me
 Did you like this project and the features that it enables or are you psyched by the awesome use of NLP demonstrated in here? Please consider supporting me! :)
 
