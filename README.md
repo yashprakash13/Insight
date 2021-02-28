@@ -38,8 +38,7 @@ Insight currently offers these features:
 ## See the app in action
 Watch the demo video I made about the project (It's 3:16 long. I worked very hard on this to **make it fun** rather than just a boring demo):
 
-[![Watch the app in action on YouTube!](http://img.youtube.com/vi/3zhDx04Nxd8/0.jpg)](http://www.youtube.com/watch?v=3zhDx04Nxd8 "Insight Demo Video")
-
+<a href="http://www.youtube.com/watch?v=3zhDx04Nxd8"> <img src="https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7zHKjfxq6y9ShogWtMBMPyB3jiNps91LoNH8A=s500" width="148"> </a>
 
 ## Contribute to this project
 I made Insight with two things in mind:
