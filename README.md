@@ -8,6 +8,16 @@
 
 
 ## Table of Contents
+| Topics      | Jump to Link |
+| ----------- | ----------- |
+| Why I built this app      |  [because the thought matters](https://github.com/yashprakash13/Insight#understanding-the-motivation) |
+| How Insight works   | [so that you love it as much I do](https://github.com/yashprakash13/Insight#how-it-works)  |
+| Watch the demo video I made for the app | [this was hard to make but I enjoyed it very much](https://github.com/yashprakash13/Insight#see-the-app-in-action)   |
+| Contribute to this app (built a frontend) | [yes, please. You're welcome to. ](https://github.com/yashprakash13/Insight#contribute-to-this-project)   |
+| Run the app on your machine | [so you get a taste](https://github.com/yashprakash13/Insight#try-the-app-on-your-machine)  |
+| How I built this app (included with tutorials) | [tools I used to make it happen](https://github.com/yashprakash13/Insight#how-i-built-this-app) |
+| Your support matters!  | [I would appreciate it very much](https://github.com/yashprakash13/Insight#support-me)  |
+
 
 ## Understanding the motivation
 The idea for this project was birthed from a tweet I saw about a famous YouTube creator saying that _a tool that can help analyse the enormous amount of comments that they get on each video_ wasn't yet present on the market. Being a data science practitioner and an avid YouTube fan, that tweet picked my brain and I was like, *this should be fun little challenge*. 
@@ -22,7 +32,7 @@ Insight currently offers these features:
   * Cluster the set of comments into different topics with a percentage assigned to each topic pertaining of how much people have talked about that something in the comments
   * Find top used emojis by the commentors 😍
   * Write a query and get comments semantically related to that query available to analyse
-  * Form a pretty little word cloud of the comments, using any of the shapes in the drop down list like a cloud(duh), a dog, a retro camera, and others!
+  * Form a pretty little word cloud of the comments, using any of the shapes in the drop down list like a cloud(duh), a dog, a retro camera, and some others!
 
 
 ## See the app in action
