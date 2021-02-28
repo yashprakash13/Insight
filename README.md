@@ -77,10 +77,10 @@ docker run --publish 8501:8501 -it insight:1.0
 
 ## How I built this app
 Insight was built with these major components. A huge thank you to their creators for making these amazing tools available for free.
-* [Google YouTube API](http://cloud.google.com) -> to download comments from videos, as I've described here.
-* [Sentence Transformers](https://sbert.net) -> to enable semantic similarity search and information retrieval with by computing sentence embeddings, as described here.
-* [Streamlit](https://www.streamlit.io/) -> the easy frontend development library for backend people like me :P I wrote a detailed blog post around it too here.
-* [Docker](https://www.docker.com/) -> to easy deploy the app as a stand-alone container, like I've written here.
+* [Google YouTube API](http://cloud.google.com) -> to download comments from videos, as I've described [here](https://medium.com/this-code/how-to-make-a-youtube-video-comments-dataset-with-the-googles-python-api-34cf32a14d16?source=your_stories_page-------------------------------------).
+* [Sentence Transformers](https://sbert.net) -> to enable semantic similarity search and information retrieval with by computing sentence embeddings, as described [here](https://pub.towardsai.net/a-quick-introduction-to-semantic-clustering-for-large-texts-3660a77b9611?source=your_stories_page-------------------------------------).
+* [Streamlit](https://www.streamlit.io/) -> the easy frontend development library for backend people like me :P I wrote a detailed blog post around it too [here](https://towardsdatascience.com/a-guide-to-streamlit-frontend-for-data-science-made-simpler-c6dda54e3183?source=your_stories_page-------------------------------------).
+* [Docker](https://www.docker.com/) -> to easy deploy the app as a stand-alone container, like I've written [here](https://pub.towardsai.net/how-to-dockerize-your-data-science-project-a-quick-guide-b6fa2d6a8ba1?source=your_stories_page-------------------------------------).
 
 
 
