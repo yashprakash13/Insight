@@ -41,6 +41,38 @@ I have always been a backend-Java-Kotlin-Python guy and thus, I am unfortunately
 I would love to collab with someone like you who is eager to use his skills make this project more awesome! Thanks for being here anyway. :heart: 
 
 
+## Try the app on your machine
+1. Make a new directory to store the project:
+```bash
+mkdir InsightApp
+```
+2. **cd** into the directory:
+```bash
+cd InsightApp
+```
+3. Clone this repo: 
+```bash
+git clone https://github.com/yashprakash13/Insight.git
+```
+4. Make a new virtual environment. I recommend using **pipenv**:
+```bash
+pipenv shell
+```
+5. **cd** into the app directory:
+```bash
+cd Insight
+```
+6. Build the app with **docker**:
+```bash
+docker build --tag insight:1.0 .
+```
+7. Run the app:
+```bash
+docker run --publish 8501:8501 -it insight:1.0
+```
+8. Navigate to https://localhost:8501 to explore the app! Don't forget to see the [demo video](#see-the-app-in-action) first to make sure you have a good grasp of the app's workings!
+
+
 ## Support me
 Did you like this project and the features that it enables or are you psyched by the awesome use of NLP demonstrated in here? Please consider supporting me! :)
 
