@@ -13,7 +13,7 @@
 | Why I built this app      |  [because the thought matters](https://github.com/yashprakash13/Insight#understanding-the-motivation) |
 | How Insight works   | [so that you love it as much I do](https://github.com/yashprakash13/Insight#how-it-works)  |
 | Watch the demo video I made for the app | [this was hard to make but I enjoyed it very much](https://github.com/yashprakash13/Insight#see-the-app-in-action)   |
-| Contribute to this app (built a frontend) | [yes, please. You're welcome to. ](https://github.com/yashprakash13/Insight#contribute-to-this-project)   |
+| Contribute to this app (build a frontend) | [yes, please. You're welcome to. ](https://github.com/yashprakash13/Insight#contribute-to-this-project)   |
 | Run the app on your machine | [so you get a taste](https://github.com/yashprakash13/Insight#try-the-app-on-your-machine)  |
 | How I built this app (included with tutorials) | [tools I used to make it happen](https://github.com/yashprakash13/Insight#how-i-built-this-app) |
 | Your support matters!  | [I would appreciate it very much](https://github.com/yashprakash13/Insight#support-me)  |
@@ -45,6 +45,8 @@ This is what the app looks like:
 <a href="http://www.youtube.com/watch?v=3zhDx04Nxd8"> <img src="https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7zHKjfxq6y9ShogWtMBMPyB3jiNps91LoNH8A=s500" width="148"> </a>
 
 ## Contribute to this project
+First of all, please star this repo if you like it. :star: Thanks! Now let's move on.
+
 I made Insight with 2️⃣ things in mind:
 1. I wanted to build a real, usable app like this with inspiration from some of the awesome YouTubers like [Peter Mckinnon](https://www.youtube.com/user/petermckinnon24) that I love. The comments from his videos are actually being used in the demo video I made to showcase the project. Go watch it 👆🏻.
 2. I wanted to use and hone my skills in NLP by demonstrating its power to the world wth a practical app like this.
