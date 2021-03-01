@@ -46,12 +46,12 @@ This is what the app looks like:
 
 ## Contribute to this project
 I made Insight with 2️⃣ things in mind:
-1. I wanted to build a real, usable app like this with inspiration from some of the awesome YouTubers like [Peter Mckinnon](https://www.youtube.com/user/petermckinnon24) that I love. His videos are actually being used in the demo video I made. Go watch it 👆🏻.
+1. I wanted to build a real, usable app like this with inspiration from some of the awesome YouTubers like [Peter Mckinnon](https://www.youtube.com/user/petermckinnon24) that I love. The comments from his videos are actually being used in the demo video I made to showcase the project. Go watch it 👆🏻.
 2. I wanted to use and hone my skills in NLP by demonstrating its power to the world wth a practical app like this.
 
-I have always been a backend-Java-Kotlin-Python guy and thus, I am unfortunately, very much lacking in frontend web development skills. Therefore, **if you are someone who is excited by the immense possibilites associated with this project and wants to make a modern, simplistic frontend for it**, PLEASE ping me in here via a [new Issue](https://github.com/yashprakash13/Insight/issues) or contact/DM me on [Twitter](https://twitter.com/csandyash) or [LinkedIn](https://www.linkedin.com/in/yashprakash13/) whenever you can. 
+I have always been a backend-Java-Kotlin-Python guy and thus, I am unfortunately, quite lacking in frontend web development skills. Therefore, **if you are someone who is excited by the immense possibilites associated with this project and wants to make a modern, simplistic frontend for it**, PLEASE ping me in here via a [new Issue](https://github.com/yashprakash13/Insight/issues) or contact/DM me on [Twitter](https://twitter.com/csandyash) or [LinkedIn](https://www.linkedin.com/in/yashprakash13/) whenever you can. 
 
-I would love to collab with someone like you who is eager to use his skills make this project more awesome! Thanks for being here anyway. :heart: 
+I would love to collab with someone like you who is eager to use her/his skills make this project more awesome! Thanks for being here anyway. :heart: 
 
 
 ## Try the app on your machine
