@@ -8,6 +8,7 @@
 
 
 ## Table of Contents
+
 | Topics      | Jump to Link |
 | ----------- | ----------- |
 | Why I built this app      |  [because the thought matters](https://github.com/yashprakash13/Insight#understanding-the-motivation) |
