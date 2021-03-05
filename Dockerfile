@@ -7,3 +7,4 @@ COPY . /
 ENTRYPOINT [ "streamlit", "run"]
 CMD  ["start.py"]
 WORKDIR /app
+
